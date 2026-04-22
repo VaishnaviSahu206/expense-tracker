@@ -8,9 +8,12 @@ connectDB();
 
 const app = express();
 
+app.use(cors({
+  origin: "*"
+}));
+
 // middleware
 app.use(express.json());
-app.use(cors());
 
 // test route
 app.get("/", (req, res) => {
